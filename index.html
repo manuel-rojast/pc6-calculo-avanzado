@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="Guía Teórica y Compendio de 90 Ejercicios Resueltos para la Práctica Calificada 6 de Cálculo Diferencial e Integral Avanzado (CM2A1 - UNI): Integrales de Línea Escalares y Vectoriales, Campos Conservativos y Teorema de Green. Incluye 5 gráficos 3D bajo demanda, simulador 2D de Vórtice/Green, Glosario de 55 símbolos y PDF imprimible de 88 páginas.">
+  <title>Cálculo Avanzado CM2A1 - Plataforma Interactiva PC6 | UNI</title>
+
+  <!-- Preconexión a CDNs para mínima latencia en Android -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- KaTeX 0.16.11 (diferido, sin bloquear FCP) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Google Fonts: Inter & Fira Code -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos propios v2.0 -->
+  <link rel="stylesheet" href="css/styles.css?v=1">
+</head>
+<body data-eval-slug="cm2a1-pc6">
+
+  <!-- Barra de progreso de lectura -->
+  <div class="reading-progress-track" aria-hidden="true">
+    <div class="reading-progress-bar" id="reading-progress-bar"></div>
+  </div>
+
+  <!-- Barra de Navegación Superior Fija -->
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="nav-brand-row">
+      <div class="nav-brand">
+        <span class="brand-badge">UNI FC</span>
+        <span class="brand-title">Cálculo Avanzado CM2A1 • PC6</span>
+      </div>
+      <button type="button" id="theme-toggle-btn" class="theme-toggle-btn" aria-pressed="false" aria-label="Alternar tema claro u oscuro">
+        <span class="theme-icon" aria-hidden="true">☀️</span>
+        <span class="theme-label">Claro</span>
+      </button>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#temario">Temario</a></li>
+      <li>
+        <a href="#section-tr" id="nav-link-retos" class="nav-link-highlight">
+          <span class="pdf-text-long">🎯 Retos 2026-2</span>
+          <span class="pdf-text-short">🎯 Retos</span>
+        </a>
+      </li>
+      <li>
+        <a href="#section-glosario" id="nav-link-glosario" class="nav-link-highlight nav-link-glossary">
+          <span class="pdf-text-long">📖 Glosario PC6</span>
+          <span class="pdf-text-short">📖 Glosario</span>
+        </a>
+      </li>
+      <li><a href="#ejercicios-t1" id="nav-link-ejercicios">Ejercicios</a></li>
+      <li>
+        <a href="pdf/Compendio_PC6_Calculo_Avanzado.pdf?v=1" target="_blank" rel="noopener noreferrer" class="btn-pdf-download" title="Descargar compendio completo oficial en PDF de la PC6 (88 páginas)">
+          <span class="pdf-icon" aria-hidden="true">📄</span>
+          <span class="pdf-text-long">Versión PDF Imprimible (88 págs)</span>
+          <span class="pdf-text-short">Ver PDF (88p)</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-container">
+
+    <!-- Hero Header -->
+    <header class="hero-header" id="hero">
+      <span class="hero-tag">Ciclo 2026-2 • Sílabo Oficial (Sesiones 31 a 36 • Cap. 05) • UNI</span>
+      <h1 class="hero-title">Guía Maestra y Banco Interactivo: PC6</h1>
+      <p class="hero-desc">
+        Plataforma integral de <strong>Integrales de Línea Escalares ($\int_C f\,ds$)</strong>, <strong>Campos Vectoriales y Trabajo ($\int_C \vec{F}\cdot d\vec{r}$)</strong>, <strong>Conjuntos Convexos y Campos Gradientes</strong>, <strong>El Vórtice en $\mathbb{R}^2 \setminus \{(0,0)\}$</strong>, <strong>Teorema de Green Simple y Múltiplemente Conexo</strong>, <strong>Solucionarios Oficiales (PC6 2026-I, 2025-II y 2024-II)</strong> y <strong>90 problemas graduados paso a paso</strong>.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">5 + Retos</div>
+          <div class="stat-label">Subtemas (Ses. 31–36)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">90</div>
+          <div class="stat-label">Ejercicios Graduados (N0–N5)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">55</div>
+          <div class="stat-label">Símbolos en Glosario 5D</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Visores 3D y Simulador 2D</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Pestañas de Navegación Principal -->
+    <nav class="topic-tabs-nav" id="temario" role="tablist" aria-label="Subtemas de PC6">
+      <button type="button" class="topic-tab-btn active" data-topic="t1" role="tab" aria-selected="true" aria-controls="section-t1">
+        <span>〰️</span> Subtema 1: Integral Escalar ∫ f ds
+      </button>
+      <button type="button" class="topic-tab-btn" data-topic="t2" role="tab" aria-selected="false" aria-controls="section-t2">
+        <span>➡️</span> Subtema 2: Integral Vectorial &amp; Trabajo
+      </button>
+      <button type="button" class="topic-tab-btn" data-topic="t3" role="tab" aria-selected="false" aria-controls="section-t3">
+        <span>🧭</span> Subtema 3: Convexos &amp; Campos Gradientes
+      </button>
+      <button type="button" class="topic-tab-btn" data-topic="t4" role="tab" aria-selected="false" aria-controls="section-t4">
+        <span>🌀</span> Subtema 4: Potenciales &amp; El Vórtice
+      </button>
+      <button type="button" class="topic-tab-btn" data-topic="t5" role="tab" aria-selected="false" aria-controls="section-t5">
+        <span>🔄</span> Subtema 5: Teorema de Green
+      </button>
+      <button type="button" class="topic-tab-btn retos-tab-special" data-topic="tr" role="tab" aria-selected="false" aria-controls="section-tr">
+        <span>🎯</span> Retos 2026-2: Exámenes PC6 &amp; Simulador Green
+      </button>
+      <button type="button" class="topic-tab-btn glossary-tab-special" data-topic="glosario" role="tab" aria-selected="false" aria-controls="section-glosario">
+        <span>📖</span> Glosario PC6 (55)
+      </button>
+    </nav>
+
+    <!-- ========================================================================
+         SECCIÓN 1: INTEGRAL DE LÍNEA DE UNA FUNCIÓN ESCALAR (SESIÓN 31)
+         ======================================================================== -->
+    <section class="topic-section active" id="section-t1" role="tabpanel">
+      <div class="subtopic-jump-bar" aria-label="Acceso rápido del Subtema 1">
+        <span class="jump-bar-label">Ir a:</span>
+        <button type="button" class="jump-pill" data-jump-target=".theory-block.theorem">📘 Teoría</button>
+        <button type="button" class="jump-pill" data-jump-target=".visualizer-card">🎮 Gráfico 3D</button>
+        <button type="button" class="jump-pill" data-jump-target=".subtopic-glossary-widget">📖 Glosario</button>
+        <button type="button" class="jump-pill" data-jump-target=".proof-anatomy-widget">🧬 Demostración</button>
+        <button type="button" class="jump-pill" data-jump-target=".exercises-header">📝 Ejercicios</button>
+      </div>
+
+      <div class="topic-grid">
+        <article class="theory-card">
+          <h2><span>〰️</span> Curvas Regulares a Trozos e Integral de Línea Escalar ($\int_C f\,ds$)</h2>
+          <p>
+            La <strong>integral de línea de primer tipo</strong> generaliza la integral definida unidimensional $\int_a^b f(x)\,dx$ a dominios unidimensionales curvos inmersos en $\mathbb{R}^2$ o $\mathbb{R}^3$. Permite evaluar magnitudes acumulativas intrínsecas a la geometría del alambre o trayectoria —como su masa total, centro de gravedad, momentos de inercia y el área de cortinas verticales— independientemente de la velocidad o el sentido con que se recorra la curva.
+          </p>
+
+          <!-- BLOQUE 1: DEFINICIONES Y TEOREMAS -->
+          <div class="theory-block theorem">
+            <h4>Definición Rigurosa e Invariancia ante Reparametrización (Sesión 31)</h4>
+            <p>
+              Sea $C \subset \mathbb{R}^n$ una curva regular a trozos parametrizada por $\alpha: [a,b] \to \mathbb{R}^n$ ($a \lt b$) y sea $f: U \subset \mathbb{R}^n \to \mathbb{R}$ una función continua en un abierto $U \supset C$. Se define la <strong>integral de línea de $f$ respecto a la longitud de arco</strong> como:
+              $$\int_C f\,ds := \int_a^b f(\alpha(t))\,\|\alpha'(t)\|\,dt.$$
+            </p>
+            <ul>
+              <li><strong>Teorema de Invariancia:</strong> Si $\beta = \alpha \circ \varphi : [c,d] \to \mathbb{R}^n$ es cualquier reparametrización regular (preservando o invirtiendo orientación), entonces $\int_C f\,ds$ <strong>no cambia de valor ni de signo</strong>: $\int_{-C} f\,ds = +\int_C f\,ds$.</li>
+              <li><strong>Aplicaciones Físicas y Geométricas:</strong> Longitud $\ell(C) = \int_C 1\,ds$; Masa de alambre $M = \int_C \rho\,ds$; Centro de gravedad $\bar{x}_i = \frac{1}{M}\int_C x_i \rho\,ds$; Área de cortina vertical sobre $C \subset \mathbb{R}^2$ bajo $z = f(x,y) \ge 0$: $A = \int_C f\,ds$.</li>
+            </ul>
+          </div>
+
+          <div class="theory-block caution">
+            <h4>¡Cuidado con esta trampa clásica UNI! (Olvidar $\|\alpha'(t)\|$ o invertir el signo)</h4>
+            <p>
+              Dos errores anulan puntos de inmediato en la PC6: (1) sustituir $ds$ por $dt$ olvidando el factor de rapidez $\|\alpha'(t)\| = \sqrt{(x')^2 + (y')^2 + (z')^2}$; (2) cambiar el signo de una integral escalar al recorrer $C$ en sentido contrario. Recuerda: en $\int_C f\,ds$ siempre integramos desde el extremo inferior $a$ al superior $b$ ($a \lt b$) porque $ds \gt 0$ mide longitud real.
+            </p>
+          </div>
+
+          <!-- BLOQUE 2: GRÁFICO INTERACTIVO 3D -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">🎮 Gráfico 3D Interactivo: Cortina Vertical y Área Acumulada $\int_C f\,ds$</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="t1-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <span class="control-label">Curva Base $C$ en el Plano $XY$:</span>
+                <div class="control-btn-group">
+                  <button type="button" class="btn-ctrl t1-curve-btn active" data-curve="circle">Arco Circular</button>
+                  <button type="button" class="btn-ctrl t1-curve-btn" data-curve="parabola">Arco Parabólico</button>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="t1-param-slider">Avance Paramétrico ($t$):</label>
+                <input type="range" class="control-slider" id="t1-param-slider" min="0.4" max="6.28" step="0.1" value="4.5">
+              </div>
+              <div class="visualizer-readout">
+                <span>Medición en Vivo:</span>
+                <span class="readout-value" id="t1-param-readout">t = 4.50 • Longitud ℓ = 7.20 • ∫ f ds = 9.720</span>
+              </div>
+            </div>
+            <p class="visualizer-caption">
+              La altura celeste de la valla en cada punto $(x,y) \in C$ representa el valor del campo escalar $f(x,y)$. El área total pintada de esa cortina curva es exactamente $\int_C f\,ds$.
+            </p>
+          </div>
+
+          <!-- BLOQUE 3: EXPLICACIÓN INTUITIVA -->
+          <div class="theory-block intuition">
+            <h4>💡 Explicación Sencilla y Detallada (Intuición Geométrica y Física)</h4>
+            <p>
+              <strong>¿Qué estás calculando realmente con $\int_C f\,ds$?</strong> Imagina dibujar una carretera curva $C$ en el piso de un gimnasio y levantar sobre ella una <strong>cortina o valla vertical</strong> cuya altura en cada punto $(x,y)$ sea $z = f(x,y)$. Si quisieras saber cuántos metros cuadrados de pintura necesitas para pintar un lado de esa cortina ondulada, la cortarías en tiritas verticales diminutas de ancho $ds$ (medido con una cinta métrica pegada a la curva) y altura $f(x,y)$.
+            </p>
+            <p>
+              Al sumar todas las tiritas $f(x,y)\,ds$, obtienes el área exacta de la cortina. Y si en lugar de altura piensas en $f(x,y) = \rho(x,y)$ como la densidad de un alambre metálico (gramos por centímetro), la misma integral suma los gramos de cada milímetro $ds$ para darte la <strong>masa total del alambre</strong>. ¡Por eso no importa si mides el alambre de izquierda a derecha o al revés: pesa exactamente lo mismo!
+            </p>
+          </div>
+
+          <!-- BLOQUE 4: GLOSARIO INTERACTIVO DEL SUBTEMA 1 -->
+          <div class="subtopic-glossary-widget" id="subtopic-glossary-t1" data-topic="t1">
+            <div class="subtopic-glossary-header">
+              <div class="subtopic-glossary-info">
+                <h4>📖 Glosario Interactivo de Notación (Sesión 31)</h4>
+                <p class="subtopic-glossary-subtext">11 símbolos esenciales: curva regular, elemento $ds$, cortina vertical, masa de alambre, centro de gravedad, reparametrización y cota ML.</p>
+              </div>
+              <div class="subtopic-glossary-controls">
+                <div class="subtopic-search-wrap">
+                  <span class="subtopic-search-icon" aria-hidden="true">🔍</span>
+                  <input type="text" class="subtopic-search-input" data-topic="t1" placeholder="Filtrar símbolos del Subtema 1..." autocomplete="off" aria-label="Filtrar símbolos del Subtema 1">
+                  <button type="button" class="subtopic-search-clear" data-topic="t1" title="Limpiar" aria-label="Limpiar filtro">✕</button>
+                </div>
+                <button type="button" class="btn-toggle-subtopic-view" data-topic="t1" title="Alternar vista compacta y detallada">
+                  <span class="view-mode-icon" aria-hidden="true">📑</span> <span class="view-mode-label">Vista Compacta</span>
+                </button>
+              </div>
+            </div>
+            <div class="subtopic-glossary-counter" id="subtopic-counter-t1">
+              Mostrando <span class="subtopic-count-val">11</span> de 11 símbolos del Subtema 1
+            </div>
+            <div class="subtopic-glossary-cards" id="subtopic-glossary-cards-t1"></div>
+          </div>
+
+          <!-- BLOQUE 5: DEMOSTRACIÓN EN 2 FASES -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración: Invariancia de $\int_C f\,ds$ ante Inversión de Orientación</span>
+              <div class="proof-phase-tabs" role="tablist">
+                <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. ¿A qué quiero llegar?</h5>
+                  <p>Probar que si $\beta(u) = \alpha(\varphi(u))$ invierte el recorrido ($\varphi' \lt 0$, $\varphi(c)=b$, $\varphi(d)=a$), la integral escalar da exactamente el mismo valor positivo.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. Dos Signos Negativos</h5>
+                  <p>Al sacar $\varphi'(u) \lt 0$ de la norma aparece $|\varphi'(u)| = -\varphi'(u)$ (primer signo menos). Al sustituir $t = \varphi(u)$, los límites quedan invertidos $\int_b^a$ (segundo signo menos).</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. Cancelación Perfecta</h5>
+                  <p>Los dos signos menos se multiplican y se anulan: $-\int_b^a = +\int_a^b$. Por eso $\int_{-C} f\,ds = +\int_C f\,ds$.</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal:</strong></p>
+                <p>Sea $\alpha:[a,b]\to\mathbb{R}^n$ una parametrización regular de $C$ y $\varphi:[c,d]\to[a,b]$ un $C^1$-difeomorfismo decreciente ($\varphi'(u) \lt 0$ en $[c,d]$, con $\varphi(c)=b$ y $\varphi(d)=a$). Definimos $\beta(u) = \alpha(\varphi(u))$.</p>
+                <p>1. Por la regla de la cadena, $\beta'(u) = \alpha'(\varphi(u))\,\varphi'(u)$, luego su norma es:
+                $$\|\beta'(u)\| = \|\alpha'(\varphi(u))\|\,|\varphi'(u)| = -\|\alpha'(\varphi(u))\|\,\varphi'(u).$$</p>
+                <p style="margin-bottom:0;">2. Sustituyendo $t = \varphi(u)$ ($dt = \varphi'(u)\,du$) en la definición de integral escalar sobre $\beta$:
+                $$\int_c^d f(\beta(u))\,\|\beta'(u)\|\,du = -\int_c^d f(\alpha(\varphi(u)))\,\|\alpha'(\varphi(u))\|\,\varphi'(u)\,du = -\int_b^a f(\alpha(t))\,\|\alpha'(t)\|\,dt = +\int_a^b f(\alpha(t))\,\|\alpha'(t)\|\,dt.$$
+                Por consiguiente, $\int_{-C} f\,ds = \int_C f\,ds$. $\qquad \blacksquare$</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- BLOQUE 6: BANCO DE EJERCICIOS SUBTEMA 1 -->
+      <div class="exercises-header" id="ejercicios-t1">
+        <div>
+          <h2>Banco de Ejercicios: Integral de Línea Escalar</h2>
+          <div class="exercises-meta-row">
+            <span class="subtopic-glossary-subtext">18 ejercicios rigurosos organizados progresivamente del Nivel 0 al 5.</span>
+            <span class="exercise-progress-pill" id="progress-t1">✓ 0 / 18 dominados</span>
+          </div>
+        </div>
+        <div class="level-tabs" data-topic="t1" role="tablist">
+          <button type="button" class="level-tab-btn active" data-level="0" role="tab" aria-selected="true">Nivel 0 (Calentamiento)</button>
+          <button type="button" class="level-tab-btn" data-level="1" role="tab" aria-selected="false">Nivel 1 (Básico)</button>
+          <button type="button" class="level-tab-btn" data-level="2" role="tab" aria-selected="false">Nivel 2 (Intermedio)</button>
+          <button type="button" class="level-tab-btn" data-level="3" role="tab" aria-selected="false">Nivel 3 (Examen UNI)</button>
+          <button type="button" class="level-tab-btn" data-level="4" role="tab" aria-selected="false">Nivel 4 (Avanzado)</button>
+          <button type="button" class="level-tab-btn" data-level="5" role="tab" aria-selected="false">Nivel 5 (Rigor Máximo)</button>
+          <button type="button" class="level-tab-btn" data-level="all" role="tab" aria-selected="false">Ver Todos</button>
+        </div>
+      </div>
+      <div class="exercises-list" id="exercises-container-t1"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 2: INTEGRAL DE LÍNEA DE CAMPOS VECTORIALES Y TRABAJO (SESIÓN 32)
+         ======================================================================== -->
+    <section class="topic-section" id="section-t2" role="tabpanel" hidden>
+      <div class="subtopic-jump-bar" aria-label="Acceso rápido del Subtema 2">
+        <span class="jump-bar-label">Ir a:</span>
+        <button type="button" class="jump-pill" data-jump-target=".theory-block.theorem">📘 Teoría</button>
+        <button type="button" class="jump-pill" data-jump-target=".visualizer-card">🎮 Gráfico 3D</button>
+        <button type="button" class="jump-pill" data-jump-target=".subtopic-glossary-widget">📖 Glosario</button>
+        <button type="button" class="jump-pill" data-jump-target=".proof-anatomy-widget">🧬 Demostración</button>
+        <button type="button" class="jump-pill" data-jump-target=".exercises-header">📝 Ejercicios</button>
+      </div>
+
+      <div class="topic-grid">
+        <article class="theory-card">
+          <h2><span>➡️</span> Integral de Línea de Campos Vectoriales ($\int_C \vec{F}\cdot d\vec{r}$) y Trabajo Mecánico</h2>
+          <p>
+            Cuando un campo vectorial continuo $\vec{F}: U \subseteq \mathbb{R}^n \to \mathbb{R}^n$ (como una fuerza gravitatoria, eléctrica o la velocidad de un fluido) actúa sobre una partícula que recorre una curva orientada $C$, el efecto neto acumulado a lo largo de la dirección de movimiento queda medido por la <strong>integral de línea de segundo tipo</strong>. A diferencia de la integral escalar, aquí el <strong>sentido de recorrido</strong> es esencial.
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Definición, Forma Diferencial y Propiedades Clave (Sesión 32)</h4>
+            <p>
+              Sea $\alpha: [a,b] \to U \subseteq \mathbb{R}^n$ una curva regular a trozos orientada y $\vec{F} = (F_1, \dots, F_n)$ un campo vectorial continuo sobre $C = \alpha([a,b])$. Se define:
+              $$\int_C \vec{F}\cdot d\vec{r} \equiv \int_C \vec{F}\cdot d\alpha := \int_a^b \vec{F}(\alpha(t))\cdot \alpha'(t)\,dt = \int_C \left(\vec{F}\cdot \vec{T}\right)ds.$$
+              En $\mathbb{R}^3$, con $\vec{F} = (P, Q, R)$ y $d\vec{r} = (dx, dy, dz)$, se escribe en forma diferencial:
+              $$\int_C \vec{F}\cdot d\vec{r} = \int_C \big(P\,dx + Q\,dy + R\,dz\big).$$
+            </p>
+            <ul>
+              <li><strong>Comportamiento frente a reparametrización:</strong> Invariante si $\varphi' \gt 0$ (mismo sentido); <strong>cambia de signo</strong> si $\varphi' \lt 0$ (sentido opuesto): $\int_{-C} \vec{F}\cdot d\vec{r} = -\int_C \vec{F}\cdot d\vec{r}$.</li>
+              <li><strong>Acotación de Cauchy-Schwarz:</strong> Si $\|\vec{F}(p)\| \le M$ en $C$, entonces $\left|\int_C \vec{F}\cdot d\vec{r}\right| \le M\,\ell(C)$.</li>
+              <li><strong>Circulación vs. Flujo 2D:</strong> Circulación tangencial $\oint_C (P\,dx + Q\,dy)$ vs. Flujo normal saliente $\oint_C \vec{F}\cdot\vec{n}\,ds = \oint_C (P\,dy - Q\,dx)$.</li>
+            </ul>
+          </div>
+
+          <div class="theory-block caution">
+            <h4>¡Cuidado con esta trampa clásica UNI! (Circulación $\neq$ Flujo y Sin Norma $\|\alpha'\|$)</h4>
+            <p>
+              (1) En la integral vectorial NO aparece la raíz cuadrada $\|\alpha'(t)\|$ porque el producto escalar con $\vec{T} = \alpha'/\|\alpha'\|$ cancela exactamente $\|\alpha'\|$ contra $ds = \|\alpha'\|\,dt$. (2) En PC6 2024-II #4a se pidió el <strong>flujo</strong> a través de una tubería $C$: el flujo usa $\vec{F}\cdot\vec{n}\,ds = P\,dy - Q\,dx$, NO $P\,dx + Q\,dy$!
+            </p>
+          </div>
+
+          <!-- BLOQUE 2: GRÁFICO INTERACTIVO 3D -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">🎮 Gráfico 3D Interactivo: Campo de Flechas, Orientación y Trabajo $W$</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="t2-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <span class="control-label">Orientación del Recorrido:</span>
+                <div class="control-btn-group">
+                  <button type="button" class="btn-ctrl t2-orient-btn active" data-orient="pos">Sentido $+C$ (Antihorario)</button>
+                  <button type="button" class="btn-ctrl t2-orient-btn" data-orient="neg">Sentido $-C$ (Invertido)</button>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="t2-pos-slider">Posición de la Partícula ($u \in [0,1]$):</label>
+                <input type="range" class="control-slider" id="t2-pos-slider" min="0.05" max="1.0" step="0.05" value="0.7">
+              </div>
+              <div class="visualizer-readout">
+                <span>Trabajo Acumulado:</span>
+                <span class="readout-value" id="t2-work-readout">+C (Antihoraria) • W acumulado = +3.520</span>
+              </div>
+            </div>
+            <p class="visualizer-caption">
+              La flecha verde es la tangente $\vec{T}$ de movimiento y la roja es la fuerza $\vec{F}$ en la partícula amarilla. Invierte la orientación ($+C \leftrightarrow -C$) y observa cómo el trabajo $W$ cambia exactamente de signo.
+            </p>
+          </div>
+
+          <!-- BLOQUE 3: EXPLICACIÓN INTUITIVA -->
+          <div class="theory-block intuition">
+            <h4>💡 Explicación Sencilla y Detallada (Intuición del Viento y el Ciclista)</h4>
+            <p>
+              Piensa en un ciclista pedaleando por una ruta $C$ mientras sopla un viento variable $\vec{F}(x,y)$ (representado por las flechas azules arriba):
+            </p>
+            <ul>
+              <li>Si el viento sopla <strong>a favor de tu dirección</strong> ($\vec{F}\cdot\vec{T} \gt 0$), te empuja y suma trabajo positivo.</li>
+              <li>Si el viento sopla <strong>de costado a $90^\circ$</strong> ($\vec{F}\cdot\vec{T} = 0$), ni te impulsa ni te frena (trabajo cero, exactamente el ítem 1a de PC6 2025-II!).</li>
+              <li>Si el viento sopla <strong>en contra</strong> ($\vec{F}\cdot\vec{T} \lt 0$), te frena y suma trabajo negativo. Por eso, si das media vuelta y regresas por la misma carretera ($-C$), el viento que antes te ayudaba ahora te frena exactamente en la misma cantidad!</li>
+            </ul>
+          </div>
+
+          <!-- BLOQUE 4: GLOSARIO SUBTEMA 2 -->
+          <div class="subtopic-glossary-widget" id="subtopic-glossary-t2" data-topic="t2">
+            <div class="subtopic-glossary-header">
+              <div class="subtopic-glossary-info">
+                <h4>📖 Glosario Interactivo de Notación (Sesión 32)</h4>
+                <p class="subtopic-glossary-subtext">11 símbolos esenciales: $\int_C \vec{F}\cdot d\vec{r}$, forma diferencial $Pdx+Qdy+Rdz$, vector tangente $\vec{T}$, trabajo, circulación, flujo 2D y curvas integrales.</p>
+              </div>
+              <div class="subtopic-glossary-controls">
+                <div class="subtopic-search-wrap">
+                  <span class="subtopic-search-icon" aria-hidden="true">🔍</span>
+                  <input type="text" class="subtopic-search-input" data-topic="t2" placeholder="Filtrar símbolos del Subtema 2..." autocomplete="off" aria-label="Filtrar símbolos del Subtema 2">
+                  <button type="button" class="subtopic-search-clear" data-topic="t2" title="Limpiar" aria-label="Limpiar filtro">✕</button>
+                </div>
+                <button type="button" class="btn-toggle-subtopic-view" data-topic="t2" title="Alternar vista compacta y detallada">
+                  <span class="view-mode-icon" aria-hidden="true">📑</span> <span class="view-mode-label">Vista Compacta</span>
+                </button>
+              </div>
+            </div>
+            <div class="subtopic-glossary-counter" id="subtopic-counter-t2">
+              Mostrando <span class="subtopic-count-val">11</span> de 11 símbolos del Subtema 2
+            </div>
+            <div class="subtopic-glossary-cards" id="subtopic-glossary-cards-t2"></div>
+          </div>
+
+          <!-- BLOQUE 5: DEMOSTRACIÓN EN 2 FASES -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración: Cambio de Signo ante Reparametrización Negativa</span>
+              <div class="proof-phase-tabs" role="tablist">
+                <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. Diferencia con Escalar</h5>
+                  <p>Aquí NO hay norma $\|\cdot\|$, así que $\varphi'(u)$ sale TAL CUAL (sin valor absoluto) y se absorbe íntegramente en $dt = \varphi'(u)\,du$.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. Límites Invertidos</h5>
+                  <p>Como $\varphi$ invierte orientación, $\varphi(c) = b$ y $\varphi(d) = a$. Al sustituir $t = \varphi(u)$, la integral queda desde $b$ hasta $a$.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. Conclusión Directa</h5>
+                  <p>Al voltear los límites $\int_b^a = -\int_a^b$, aparece el único signo menos que demuestra $\int_{-C} \vec{F}\cdot d\vec{r} = -\int_C \vec{F}\cdot d\vec{r}$.</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal:</strong></p>
+                <p>Sea $\beta = \alpha \circ \varphi : [c,d] \to \mathbb{R}^n$ con $\varphi \in C^1([c,d], [a,b])$ biyectiva decreciente ($\varphi(c) = b$, $\varphi(d) = a$). Por regla de la cadena, $\beta'(u) = \alpha'(\varphi(u))\,\varphi'(u)$.</p>
+                <p style="margin-bottom:0;">Evaluando la integral vectorial sobre $\beta$ y efectuando el cambio de variable $t = \varphi(u)$, $dt = \varphi'(u)\,du$:
+                $$\int_\beta \vec{F}\cdot d\beta = \int_c^d \vec{F}(\alpha(\varphi(u)))\cdot\alpha'(\varphi(u))\,\varphi'(u)\,du = \int_b^a \vec{F}(\alpha(t))\cdot\alpha'(t)\,dt = -\int_a^b \vec{F}(\alpha(t))\cdot\alpha'(t)\,dt = -\int_\alpha \vec{F}\cdot d\alpha. \quad \blacksquare$$</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- BLOQUE 6: BANCO DE EJERCICIOS SUBTEMA 2 -->
+      <div class="exercises-header" id="ejercicios-t2">
+        <div>
+          <h2>Banco de Ejercicios: Integral de Línea Vectorial y Trabajo</h2>
+          <div class="exercises-meta-row">
+            <span class="subtopic-glossary-subtext">18 ejercicios rigurosos organizados progresivamente del Nivel 0 al 5.</span>
+            <span class="exercise-progress-pill" id="progress-t2">✓ 0 / 18 dominados</span>
+          </div>
+        </div>
+        <div class="level-tabs" data-topic="t2" role="tablist">
+          <button type="button" class="level-tab-btn active" data-level="0" role="tab" aria-selected="true">Nivel 0 (Calentamiento)</button>
+          <button type="button" class="level-tab-btn" data-level="1" role="tab" aria-selected="false">Nivel 1 (Básico)</button>
+          <button type="button" class="level-tab-btn" data-level="2" role="tab" aria-selected="false">Nivel 2 (Intermedio)</button>
+          <button type="button" class="level-tab-btn" data-level="3" role="tab" aria-selected="false">Nivel 3 (Examen UNI)</button>
+          <button type="button" class="level-tab-btn" data-level="4" role="tab" aria-selected="false">Nivel 4 (Avanzado)</button>
+          <button type="button" class="level-tab-btn" data-level="5" role="tab" aria-selected="false">Nivel 5 (Rigor Máximo)</button>
+          <button type="button" class="level-tab-btn" data-level="all" role="tab" aria-selected="false">Ver Todos</button>
+        </div>
+      </div>
+      <div class="exercises-list" id="exercises-container-t2"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 3: CONJUNTOS CONVEXOS Y CAMPOS GRADIENTES (SESIÓN 33)
+         ======================================================================== -->
+    <section class="topic-section" id="section-t3" role="tabpanel" hidden>
+      <div class="subtopic-jump-bar" aria-label="Acceso rápido del Subtema 3">
+        <span class="jump-bar-label">Ir a:</span>
+        <button type="button" class="jump-pill" data-jump-target=".theory-block.theorem">📘 Teoría</button>
+        <button type="button" class="jump-pill" data-jump-target=".visualizer-card">🎮 Gráfico 3D</button>
+        <button type="button" class="jump-pill" data-jump-target=".subtopic-glossary-widget">📖 Glosario</button>
+        <button type="button" class="jump-pill" data-jump-target=".proof-anatomy-widget">🧬 Demostración</button>
+        <button type="button" class="jump-pill" data-jump-target=".exercises-header">📝 Ejercicios</button>
+      </div>
+
+      <div class="topic-grid">
+        <article class="theory-card">
+          <h2><span>🧭</span> Conjuntos Convexos, Campos Gradientes y Criterio de Derivadas Cruzadas</h2>
+          <p>
+            Antes de parametrizar una curva complicada para calcular $\int_C \vec{F}\cdot d\vec{r}$, la primera pregunta inteligente en todo examen de CM2A1 es: <strong>¿es $\vec{F}$ el gradiente de alguna función escalar $\varphi$?</strong> La geometría topológica del dominio —específicamente su <em>convexidad</em> o carácter <em>estrellado / simplemente conexo</em>— marca la frontera entre una condición meramente necesaria y una condición suficiente.
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Condiciones Necesaria y Suficiente para Campos Gradientes (Sesión 33)</h4>
+            <p>
+              Un conjunto $U \subseteq \mathbb{R}^n$ es <strong>convexo</strong> si para todo $x, y \in U$ y todo $t \in [0,1]$, el segmento $(1-t)x + ty \in U$. Sea $\vec{F} = (F_1, \dots, F_n) \in C^1(U, \mathbb{R}^n)$ en un abierto $U$:
+            </p>
+            <ol>
+              <li><strong>Condición Necesaria (Teorema de Schwarz):</strong> Si $\vec{F} = \nabla\varphi$ en $U$ (con $\varphi \in C^2(U)$), entonces todas las derivadas parciales cruzadas coinciden:
+                $$\frac{\partial F_i}{\partial x_j}(x) = \frac{\partial F_j}{\partial x_i}(x), \quad \forall i, j \in \{1, \dots, n\},\; \forall x \in U.$$
+                (En $\mathbb{R}^2$: $P_y = Q_x$; en $\mathbb{R}^3$: $\operatorname{rot}\vec{F} = \nabla \times \vec{F} = \vec{0}$).</li>
+              <li><strong>Condición Suficiente (Lema de Poincaré en Convexos / Estrellados):</strong> Si $U$ es <strong>abierto convexo</strong> (o más generalmente estrellado) y $\vec{F} \in C^1(U)$ cumple $\frac{\partial F_i}{\partial x_j} = \frac{\partial F_j}{\partial x_i}$ en todo $U$, entonces <strong>existe $\varphi \in C^2(U)$ tal que $\vec{F} = \nabla\varphi$</strong>, dada constructivamente por $\varphi(x) = \int_0^1 \vec{F}(x_0 + t(x-x_0))\cdot(x-x_0)\,dt$.</li>
+            </ol>
+          </div>
+
+          <div class="theory-block caution">
+            <h4>¡Cuidado con las DOS falacias lógicas en examen UNI!</h4>
+            <p>
+              <strong>Falacia 1:</strong> «$P_y = Q_x \implies$ conservativo sin revisar el dominio» — <strong>FALSO</strong> (falla si hay agujeros, como el vórtice en $\mathbb{R}^2\setminus\{(0,0)\}$).<br>
+              <strong>Falacia 2:</strong> «El dominio $U$ NO es convexo $\implies \vec{F}$ NO es conservativo» — <strong>FALSO</strong> (PC6 2025-II #4: el campo radial $\left(\frac{2x}{x^2+y^2}, \frac{2y}{x^2+y^2}\right)$ en $\mathbb{R}^2\setminus\{(0,0)\}$ SÍ tiene potencial global $\ln(x^2+y^2)$!).
+            </p>
+          </div>
+
+          <!-- BLOQUE 2: GRÁFICO INTERACTIVO 3D -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">🎮 Gráfico 3D Interactivo: Superficie Potencial $z = \varphi(x,y)$ y Dos Caminos $C_1, C_2$</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="t3-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <label class="control-label" for="t3-bend-slider">Curvatura del Desvío en $C_2$:</label>
+                <input type="range" class="control-slider" id="t3-bend-slider" min="-1.4" max="1.4" step="0.1" value="1.0">
+              </div>
+              <div class="visualizer-readout">
+                <span>Diferencia de Potencial:</span>
+                <span class="readout-value" id="t3-pot-readout">Desvío = 1.00 • ∫_{C₁} = ∫_{C₂} = φ(B)-φ(A) = 1.316</span>
+              </div>
+            </div>
+            <p class="visualizer-caption">
+              Mueve el desvío del camino naranja $C_2$ entre el punto inicial verde $A$ y el final rojo $B$. Sin importar cuánto rodees la montaña $z = \varphi(x,y)$, el cambio neto de altura $\varphi(B) - \varphi(A)$ permanece invariable.
+            </p>
+          </div>
+
+          <!-- BLOQUE 3: EXPLICACIÓN INTUITIVA -->
+          <div class="theory-block intuition">
+            <h4>💡 Explicación Sencilla y Detallada (La Montaña y la Habitacion sin Columnas)</h4>
+            <p>
+              Cuando un campo $\vec{F}$ es el gradiente de un potencial $\varphi$, las flechas simplemente señalan hacia dónde sube más rápido una superficie montañosa $z = \varphi(x,y)$. La igualdad de derivadas cruzadas ($P_y = Q_x$) equivale a comprobar que en cada pedacito diminuto del terreno la superficie «encaja sin escalones ni remolinos».
+            </p>
+            <p>
+              <strong>¿Por qué pedimos un conjunto convexo (o estrellado)?</strong> Porque si el terreno no tiene agujeros ni columnas prohibidas, podemos trazar una cuerda recta desde un campamento base $x_0$ hasta cualquier punto $x$ sin salirnos nunca del dominio, y definir la altitud $\varphi(x)$ midiendo cuánto subimos por esa cuerda (fórmula de Poincaré). Si hay un agujero en medio, la montaña podría convertirse en una rampa de estacionamiento en espiral (helicoide) donde volver al mismo sitio te deja en un piso distinto!
+            </p>
+          </div>
+
+          <!-- BLOQUE 4: GLOSARIO SUBTEMA 3 -->
+          <div class="subtopic-glossary-widget" id="subtopic-glossary-t3" data-topic="t3">
+            <div class="subtopic-glossary-header">
+              <div class="subtopic-glossary-info">
+                <h4>📖 Glosario Interactivo de Notación (Sesión 33)</h4>
+                <p class="subtopic-glossary-subtext">11 símbolos esenciales: conjunto convexo, estrellado, campo gradiente, criterio de Schwarz, rotacional 2D/3D, Lema de Poincaré y campos radiales.</p>
+              </div>
+              <div class="subtopic-glossary-controls">
+                <div class="subtopic-search-wrap">
+                  <span class="subtopic-search-icon" aria-hidden="true">🔍</span>
+                  <input type="text" class="subtopic-search-input" data-topic="t3" placeholder="Filtrar símbolos del Subtema 3..." autocomplete="off" aria-label="Filtrar símbolos del Subtema 3">
+                  <button type="button" class="subtopic-search-clear" data-topic="t3" title="Limpiar" aria-label="Limpiar filtro">✕</button>
+                </div>
+                <button type="button" class="btn-toggle-subtopic-view" data-topic="t3" title="Alternar vista compacta y detallada">
+                  <span class="view-mode-icon" aria-hidden="true">📑</span> <span class="view-mode-label">Vista Compacta</span>
+                </button>
+              </div>
+            </div>
+            <div class="subtopic-glossary-counter" id="subtopic-counter-t3">
+              Mostrando <span class="subtopic-count-val">11</span> de 11 símbolos del Subtema 3
+            </div>
+            <div class="subtopic-glossary-cards" id="subtopic-glossary-cards-t3"></div>
+          </div>
+
+          <!-- BLOQUE 5: DEMOSTRACIÓN EN 2 FASES -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración: Condición Necesaria de Schwarz para Campos Gradientes</span>
+              <div class="proof-phase-tabs" role="tablist">
+                <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. ¿A qué quiero llegar?</h5>
+                  <p>Probar que si $\vec{F} \in C^1(U)$ es $\nabla\varphi$, entonces $\frac{\partial F_i}{\partial x_j} = \frac{\partial F_j}{\partial x_i}$ para todo $i,j$.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. Regularidad de $\varphi$</h5>
+                  <p>Como $F_i = \frac{\partial\varphi}{\partial x_i}$ y cada $F_i \in C^1(U)$, todas las derivadas segundas de $\varphi$ existen y son continuas, es decir $\varphi \in C^2(U)$!</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. Teorema de Schwarz</h5>
+                  <p>Al ser $\varphi \in C^2(U)$, el orden de derivación mixta conmuta: $\frac{\partial^2\varphi}{\partial x_j \partial x_i} = \frac{\partial^2\varphi}{\partial x_i \partial x_j}$.</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal:</strong></p>
+                <p>Sea $U \subseteq \mathbb{R}^n$ abierto, $\vec{F} = (F_1, \dots, F_n) \in C^1(U, \mathbb{R}^n)$ y supongamos que existe $\varphi: U \to \mathbb{R}$ diferenciable tal que $\nabla\varphi = \vec{F}$ en $U$.</p>
+                <p>1. Por definición de gradiente, $\frac{\partial\varphi}{\partial x_i} = F_i$ en $U$ para cada $i \in \{1, \dots, n\}$. Como cada $F_i \in C^1(U)$, existen y son continuas todas las derivadas parciales de segundo orden $\frac{\partial^2\varphi}{\partial x_j \partial x_i} = \frac{\partial F_i}{\partial x_j}$, por lo que $\varphi \in C^2(U)$.</p>
+                <p style="margin-bottom:0;">2. Por el <strong>Teorema de Schwarz (Clairaut)</strong> sobre la igualdad de derivadas parciales mixtas de funciones de clase $C^2(U)$:
+                $$\frac{\partial F_i}{\partial x_j}(x) = \frac{\partial^2\varphi}{\partial x_j \partial x_i}(x) = \frac{\partial^2\varphi}{\partial x_i \partial x_j}(x) = \frac{\partial F_j}{\partial x_i}(x), \qquad \forall x \in U. \qquad \blacksquare$$</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- BLOQUE 6: BANCO DE EJERCICIOS SUBTEMA 3 -->
+      <div class="exercises-header" id="ejercicios-t3">
+        <div>
+          <h2>Banco de Ejercicios: Conjuntos Convexos y Campos Gradientes</h2>
+          <div class="exercises-meta-row">
+            <span class="subtopic-glossary-subtext">18 ejercicios rigurosos organizados progresivamente del Nivel 0 al 5.</span>
+            <span class="exercise-progress-pill" id="progress-t3">✓ 0 / 18 dominados</span>
+          </div>
+        </div>
+        <div class="level-tabs" data-topic="t3" role="tablist">
+          <button type="button" class="level-tab-btn active" data-level="0" role="tab" aria-selected="true">Nivel 0 (Calentamiento)</button>
+          <button type="button" class="level-tab-btn" data-level="1" role="tab" aria-selected="false">Nivel 1 (Básico)</button>
+          <button type="button" class="level-tab-btn" data-level="2" role="tab" aria-selected="false">Nivel 2 (Intermedio)</button>
+          <button type="button" class="level-tab-btn" data-level="3" role="tab" aria-selected="false">Nivel 3 (Examen UNI)</button>
+          <button type="button" class="level-tab-btn" data-level="4" role="tab" aria-selected="false">Nivel 4 (Avanzado)</button>
+          <button type="button" class="level-tab-btn" data-level="5" role="tab" aria-selected="false">Nivel 5 (Rigor Máximo)</button>
+          <button type="button" class="level-tab-btn" data-level="all" role="tab" aria-selected="false">Ver Todos</button>
+        </div>
+      </div>
+      <div class="exercises-list" id="exercises-container-t3"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 4: INDEPENDENCIA DEL CAMINO, POTENCIALES Y EL VÓRTICE (SESIÓN 34)
+         ======================================================================== -->
+    <section class="topic-section" id="section-t4" role="tabpanel" hidden>
+      <div class="subtopic-jump-bar" aria-label="Acceso rápido del Subtema 4">
+        <span class="jump-bar-label">Ir a:</span>
+        <button type="button" class="jump-pill" data-jump-target=".theory-block.theorem">📘 Teoría</button>
+        <button type="button" class="jump-pill" data-jump-target=".visualizer-card">🎮 Gráfico 3D</button>
+        <button type="button" class="jump-pill" data-jump-target=".subtopic-glossary-widget">📖 Glosario</button>
+        <button type="button" class="jump-pill" data-jump-target=".proof-anatomy-widget">🧬 Demostración</button>
+        <button type="button" class="jump-pill" data-jump-target=".exercises-header">📝 Ejercicios</button>
+      </div>
+
+      <div class="topic-grid">
+        <article class="theory-card">
+          <h2><span>🌀</span> Independencia del Camino, Construcción de Potenciales y el Vórtice Irrotacional</h2>
+          <p>
+            El <strong>Teorema Fundamental de las Integrales de Línea</strong> establece el puente exacto entre cálculo diferencial en varias variables e integración sobre trayectorias. Más allá de la convexidad, en cualquier abierto conexo $U \subseteq \mathbb{R}^n$ existen tres condiciones estrictamente equivalentes que caracterizan por completo a un campo conservativo, mientras que el famoso <strong>campo del vórtice</strong> revela cómo un único agujero topológico rompe la integrabilidad global.
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Teorema Fundamental y Equivalencias Globales en Abiertos Conexos (Sesión 34)</h4>
+            <p>
+              Sea $U \subseteq \mathbb{R}^n$ un conjunto abierto y conexo, y $\vec{F} \in C(U, \mathbb{R}^n)$. Las siguientes tres afirmaciones son <strong>lógicamente equivalentes</strong> (sin exigir que $U$ sea convexo ni simplemente conexo):
+            </p>
+            <ol>
+              <li>$\vec{F}$ es un <strong>campo gradiente</strong> en $U$: existe $\varphi \in C^1(U, \mathbb{R})$ tal que $\nabla\varphi = \vec{F}$ en $U$.</li>
+              <li>La integral $\int_C \vec{F}\cdot d\vec{r}$ es <strong>independiente del camino</strong> en $U$, y para toda curva regular a trozos $C$ de $A$ a $B$ vale el <strong>TFIL</strong>:
+                $$\int_C \nabla\varphi\cdot d\vec{r} = \varphi(B) - \varphi(A).$$</li>
+              <li>Para <strong>TODA</strong> curva cerrada regular a trozos $C \subset U$, la circulación se anula: $\oint_C \vec{F}\cdot d\vec{r} = 0$.</li>
+            </ol>
+            <p style="margin-top:0.65rem; margin-bottom:0;">
+              <strong>Contraejemplo Maestro del Vórtice en $U = \mathbb{R}^2 \setminus \{(0,0)\}$:</strong>
+              $$\vec{V}(x,y) = \left(\frac{-y}{x^2+y^2},\; \frac{x}{x^2+y^2}\right) \implies Q_x = P_y = \frac{y^2 - x^2}{(x^2+y^2)^2} \quad \text{en } U, \quad \text{pero } \oint_{x^2+y^2=R^2} \vec{V}\cdot d\vec{r} = 2\pi \neq 0.$$
+            </p>
+          </div>
+
+          <div class="theory-block caution">
+            <h4>¡Cuidado con esta trampa clásica UNI! (Dos campos casi idénticos en $\mathbb{R}^2 \setminus \{(0,0)\}$)</h4>
+            <p>
+              Compara con atención el numerador:
+              <br>• $\vec{V}(x,y) = \left(\frac{-y}{x^2+y^2},\; \frac{x}{x^2+y^2}\right)$ es el <strong>vórtice</strong>: <strong>NO es conservativo</strong> en $\mathbb{R}^2 \setminus \{(0,0)\}$ (circulación $2\pi$ alrededor del origen).
+              <br>• $\vec{R}(x,y) = \left(\frac{2x}{x^2+y^2},\; \frac{2y}{x^2+y^2}\right)$ (PC6 2025-II #4) es <strong>radial</strong>: <strong>SÍ es conservativo</strong> en $\mathbb{R}^2 \setminus \{(0,0)\}$ porque su potencial global es $\varphi(x,y) = \ln(x^2+y^2)$!
+            </p>
+          </div>
+
+          <!-- BLOQUE 2: GRÁFICO INTERACTIVO 3D -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">🎮 Gráfico 3D Interactivo: Helicoide Multivaluado $\theta = \operatorname{atan2}(y,x)$ y Salto $2\pi$</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="t4-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <label class="control-label" for="t4-center-slider">Centro del Lazo Cerrado $C$ ($x_0 \in [0, 1.6]$):</label>
+                <input type="range" class="control-slider" id="t4-center-slider" min="0" max="1.6" step="0.05" value="0.25">
+              </div>
+              <div class="visualizer-readout">
+                <span>Circulación del Vórtice:</span>
+                <span class="readout-value" id="t4-vortex-readout">Centro x₀ = 0.25 (Encierra al origen) → ∮ V·dr = 2π ≈ 6.283</span>
+              </div>
+            </div>
+            <p class="visualizer-caption">
+              La barra roja vertical marca la singularidad $(0,0)$. Cuando el lazo encierra al origen ($x_0 \lt 0.85$), subir por el potencial angular $\theta$ produce un salto vertical rojo de $2\pi$ al volver al mismo $(x,y)$. Al desplazar $x_0 \gt 0.85$, el lazo ya no rodea el agujero y cierra al mismo nivel ($0$).
+            </p>
+          </div>
+
+          <!-- BLOQUE 3: EXPLICACIÓN INTUITIVA -->
+          <div class="theory-block intuition">
+            <h4>💡 Explicación Sencilla y Detallada (La Escalera de Caracol del Vórtice)</h4>
+            <p>
+              <strong>¿Cómo puede un campo tener rotacional $0$ en todos lados y aun así dar trabajo $2\pi$ en un círculo cerrado?</strong> Imagina una <strong>cochera de pisos en espiral (helicoide)</strong> construida alrededor de una columna central prohibida (el origen $(0,0)$). Si caminas por la rampa sin dar vuelta a la columna (un círculo pequeño a un costado), subes un poco y vuelves a bajar al mismo punto: cambio neto de altura $= 0$.
+            </p>
+            <p>
+              Pero si das una vuelta completa rodeando la columna central, aunque en cada paso el suelo era liso y sin remolinos ($Q_x = P_y$), terminas exactamente <strong>un piso más arriba</strong> (salto de altura $\Delta\theta = 2\pi$)! Por eso el potencial angular $\theta$ no puede definirse como una función continua univaluada en todo $\mathbb{R}^2 \setminus \{(0,0)\}$: siempre «choca» consigo misma en $2\pi$.
+            </p>
+          </div>
+
+          <!-- BLOQUE 4: GLOSARIO SUBTEMA 4 -->
+          <div class="subtopic-glossary-widget" id="subtopic-glossary-t4" data-topic="t4">
+            <div class="subtopic-glossary-header">
+              <div class="subtopic-glossary-info">
+                <h4>📖 Glosario Interactivo de Notación (Sesión 34)</h4>
+                <p class="subtopic-glossary-subtext">11 símbolos esenciales: TFIL, equivalencias globales, integración parcial de potenciales, el vórtice, mapas de contorno, índice de enrollamiento y contraejemplos UNI.</p>
+              </div>
+              <div class="subtopic-glossary-controls">
+                <div class="subtopic-search-wrap">
+                  <span class="subtopic-search-icon" aria-hidden="true">🔍</span>
+                  <input type="text" class="subtopic-search-input" data-topic="t4" placeholder="Filtrar símbolos del Subtema 4..." autocomplete="off" aria-label="Filtrar símbolos del Subtema 4">
+                  <button type="button" class="subtopic-search-clear" data-topic="t4" title="Limpiar" aria-label="Limpiar filtro">✕</button>
+                </div>
+                <button type="button" class="btn-toggle-subtopic-view" data-topic="t4" title="Alternar vista compacta y detallada">
+                  <span class="view-mode-icon" aria-hidden="true">📑</span> <span class="view-mode-label">Vista Compacta</span>
+                </button>
+              </div>
+            </div>
+            <div class="subtopic-glossary-counter" id="subtopic-counter-t4">
+              Mostrando <span class="subtopic-count-val">11</span> de 11 símbolos del Subtema 4
+            </div>
+            <div class="subtopic-glossary-cards" id="subtopic-glossary-cards-t4"></div>
+          </div>
+
+          <!-- BLOQUE 5: DEMOSTRACIÓN EN 2 FASES -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración (PC6 2024-II #3a): Teorema Fundamental de las Integrales de Línea</span>
+              <div class="proof-phase-tabs" role="tablist">
+                <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. ¿A qué quiero llegar?</h5>
+                  <p>Probar que $\int_\alpha \nabla f\cdot d\alpha = f(\alpha(b)) - f(\alpha(a))$ para cualquier curva $C^1$ a trozos $\alpha:[a,b]\to U$.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. Función Auxiliar 1D</h5>
+                  <p>Compón $h(t) = f(\alpha(t))$. Su derivada por la regla de la cadena multivariable es exactamente $h'(t) = \nabla f(\alpha(t))\cdot \alpha'(t)$!</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. TFC + Suma Telescópica</h5>
+                  <p>Aplica el TFC de Cálculo 1 en cada tramo suave $[t_{k-1}, t_k]$ y suma: todos los puntos intermedios $f(\alpha(t_k))$ se cancelan uno con otro.</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal:</strong></p>
+                <p>Sea $f \in C^1(U, \mathbb{R})$ y $\alpha: [a,b] \to U$ una curva regular a trozos con partición $a = t_0 \lt t_1 \lt \dots \lt t_m = b$ tal que $\alpha|_{[t_{k-1}, t_k]}$ es de clase $C^1$ para cada $k = 1, \dots, m$.</p>
+                <p>1. En cada subintervalo $[t_{k-1}, t_k]$, definimos $h_k(t) = f(\alpha(t))$. Por la regla de la cadena, $h_k \in C^1([t_{k-1}, t_k])$ y:
+                $$h_k'(t) = \nabla f(\alpha(t)) \cdot \alpha'(t).$$</p>
+                <p>2. Aplicando el Teorema Fundamental del Cálculo en cada tramo:
+                $$\int_{t_{k-1}}^{t_k} \nabla f(\alpha(t))\cdot \alpha'(t)\,dt = \int_{t_{k-1}}^{t_k} h_k'(t)\,dt = h_k(t_k) - h_k(t_{k-1}) = f(\alpha(t_k)) - f(\alpha(t_{k-1})).$$</p>
+                <p style="margin-bottom:0;">3. Sumando sobre todos los tramos y aplicando cancelación telescópica:
+                $$\int_\alpha \nabla f\cdot d\alpha = \sum_{k=1}^m \Big( f(\alpha(t_k)) - f(\alpha(t_{k-1})) \Big) = f(\alpha(b)) - f(\alpha(a)). \qquad \blacksquare$$</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- BLOQUE 6: BANCO DE EJERCICIOS SUBTEMA 4 -->
+      <div class="exercises-header" id="ejercicios-t4">
+        <div>
+          <h2>Banco de Ejercicios: Potenciales, Independencia del Camino y Vórtice</h2>
+          <div class="exercises-meta-row">
+            <span class="subtopic-glossary-subtext">18 ejercicios rigurosos organizados progresivamente del Nivel 0 al 5.</span>
+            <span class="exercise-progress-pill" id="progress-t4">✓ 0 / 18 dominados</span>
+          </div>
+        </div>
+        <div class="level-tabs" data-topic="t4" role="tablist">
+          <button type="button" class="level-tab-btn active" data-level="0" role="tab" aria-selected="true">Nivel 0 (Calentamiento)</button>
+          <button type="button" class="level-tab-btn" data-level="1" role="tab" aria-selected="false">Nivel 1 (Básico)</button>
+          <button type="button" class="level-tab-btn" data-level="2" role="tab" aria-selected="false">Nivel 2 (Intermedio)</button>
+          <button type="button" class="level-tab-btn" data-level="3" role="tab" aria-selected="false">Nivel 3 (Examen UNI)</button>
+          <button type="button" class="level-tab-btn" data-level="4" role="tab" aria-selected="false">Nivel 4 (Avanzado)</button>
+          <button type="button" class="level-tab-btn" data-level="5" role="tab" aria-selected="false">Nivel 5 (Rigor Máximo)</button>
+          <button type="button" class="level-tab-btn" data-level="all" role="tab" aria-selected="false">Ver Todos</button>
+        </div>
+      </div>
+      <div class="exercises-list" id="exercises-container-t4"></div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 5: TEOREMA DE GREEN EN REGIONES SIMPLES Y MÚLTIPLEMENTE CONEXAS (SESIONES 35-36)
+         ======================================================================== -->
+    <section class="topic-section" id="section-t5" role="tabpanel" hidden>
+      <div class="subtopic-jump-bar" aria-label="Acceso rápido del Subtema 5">
+        <span class="jump-bar-label">Ir a:</span>
+        <button type="button" class="jump-pill" data-jump-target=".theory-block.theorem">📘 Teoría</button>
+        <button type="button" class="jump-pill" data-jump-target=".visualizer-card">🎮 Gráfico 3D</button>
+        <button type="button" class="jump-pill" data-jump-target=".subtopic-glossary-widget">📖 Glosario</button>
+        <button type="button" class="jump-pill" data-jump-target=".proof-anatomy-widget">🧬 Demostración</button>
+        <button type="button" class="jump-pill" data-jump-target=".exercises-header">📝 Ejercicios</button>
+      </div>
+
+      <div class="topic-grid">
+        <article class="theory-card">
+          <h2><span>🔄</span> Teorema de Green en Regiones Simplemente y Múltiplemente Conexas</h2>
+          <p>
+            El <strong>Teorema de Green</strong> es el teorema cumbre de la integración en el plano $\mathbb{R}^2$ (y el caso bidimensional de los teoremas de Stokes y Gauss del Examen Final). Transforma una integral de línea sobre la frontera cerrada orientada $\partial D^+$ en una integral doble sobre el interior $D$, convirtiendo cálculos imposibles de parametrizar en integrales triviales, calculando áreas y centroides a partir del borde y permitiendo aislar singularidades mediante deformación de contornos.
+          </p>
+
+          <div class="theory-block theorem">
+            <h4>Teorema de Green (Simple, Múltiplemente Conexo y Aplicaciones — Sesiones 35 y 36)</h4>
+            <p>
+              Sea $D \subset \mathbb{R}^2$ una región compacta acotada por una curva cerrada simple regular a trozos $\partial D^+$ orientada <strong>positivamente</strong> (la región $D$ queda siempre a la izquierda al recorrer $\partial D^+$). Si $\vec{F} = (P, Q) \in C^1(U, \mathbb{R}^2)$ en un conjunto abierto $U$ tal que <strong>$D \cup \partial D \subset U$</strong>, entonces:
+              $$\oint_{\partial D^+} \big(P\,dx + Q\,dy\big) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA.$$
+            </p>
+            <ul>
+              <li><strong>Regiones Múltiplemente Conexas (con $m$ agujeros):</strong> Con borde exterior $C_{\text{ext}}^+$ (antihorario) y bordes interiores $C_k^-$ (horarios, para dejar $D$ a la izquierda):
+                $$\oint_{C_{\text{ext}}^+} \vec{F}\cdot d\vec{r} + \sum_{k=1}^m \oint_{C_k^-} \vec{F}\cdot d\vec{r} = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dA.$$</li>
+              <li><strong>Cálculo de Áreas y Centroides por Green:</strong>
+                $$\operatorname{Area}(D) = \oint_{\partial D^+} x\,dy = -\oint_{\partial D^+} y\,dx = \frac{1}{2}\oint_{\partial D^+} (x\,dy - y\,dx), \qquad \bar{x} = \frac{1}{2A}\oint_{\partial D^+} x^2\,dy, \quad \bar{y} = -\frac{1}{2A}\oint_{\partial D^+} y^2\,dx.$$</li>
+              <li><strong>Forma Divergencia (Flujo Saliente 2D):</strong> $\oint_{\partial D^+} \vec{F}\cdot\vec{n}\,ds = \oint_{\partial D^+} (P\,dy - Q\,dx) = \iint_D (P_x + Q_y)\,dA$.</li>
+            </ul>
+          </div>
+
+          <div class="theory-block caution">
+            <h4>¡Cuidado con esta trampa clásica UNI! (Hipótesis $D \subset U$ y Orientación de Agujeros)</h4>
+            <p>
+              (1) <strong>PC6 2024-II #1c:</strong> Que $\vec{F}$ sea $C^1$ en un abierto que contiene <em>solo a la curva $C$</em> NO basta para aplicar Green — debe ser $C^1$ en TODO el interior $D$! Si hay una singularidad dentro de $D$, debes perforarla con un circulito $C_\varepsilon$ y aplicar Green múltiplemente conexo. (2) Si inviertes el sentido del contorno exterior (horario), el resultado cambia de signo.
+            </p>
+          </div>
+
+          <!-- BLOQUE 2: GRÁFICO INTERACTIVO 3D -->
+          <div class="visualizer-card embedded-visualizer">
+            <div class="visualizer-header">
+              <h3 class="visualizer-title">🎮 Gráfico 3D Interactivo: Green en Disco Simple vs. Anillo Múltiplemente Conexo</h3>
+              <span class="touch-hint-badge">👆 Toca y gira en 3D</span>
+            </div>
+
+            <div class="three-canvas-wrapper" id="t5-canvas-container"></div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <span class="control-label">Topología del Dominio $D$:</span>
+                <div class="control-btn-group">
+                  <button type="button" class="btn-ctrl t5-mode-btn" data-mode="simple">Disco Simplemente Conexo</button>
+                  <button type="button" class="btn-ctrl t5-mode-btn active" data-mode="annulus">Anillo Con Agujero (Cortes)</button>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="t5-hole-slider">Radio del Agujero Interior ($r_{\text{int}}$):</label>
+                <input type="range" class="control-slider" id="t5-hole-slider" min="0.3" max="1.4" step="0.05" value="0.75">
+              </div>
+              <div class="visualizer-readout">
+                <span>Identidad de Green ($\vec{F}=(-y,x)$):</span>
+                <span class="readout-value" id="t5-green-readout">Anillo (r=0.75, R=2) • Área = 10.80 • ∮_{∂D⁺} = 21.60</span>
+              </div>
+            </div>
+            <p class="visualizer-caption">
+              Observa las flechas verdes (borde exterior antihorario $C_{\text{ext}}^+$), las flechas ámbar (agujero interior horario $C_{\text{int}}^-$ dejando $D$ a la izquierda) y los dos cortes auxiliares rojo/celeste de ida y vuelta que se cancelan exactamente.
+            </p>
+          </div>
+
+          <!-- BLOQUE 3: EXPLICACIÓN INTUITIVA -->
+          <div class="theory-block intuition">
+            <h4>💡 Explicación Sencilla y Detallada (Cancelación de Molinetes Internos)</h4>
+            <p>
+              Imagina dividir la región $D$ en una cuadrícula de miles de cuadraditos microscópicos, cada uno rodeado por su pequeño borde antihorario. En cada cuadradito, la circulación microscópica por unidad de área vale exactamente $Q_x - P_y$ (el giro de una ruedita de molino sumergida en el fluido).
+            </p>
+            <p>
+              Ahora suma las circulaciones de todos los cuadraditos: en cada <strong>pared compartida entre dos cuadraditos vecinos</strong>, uno la recorre hacia arriba y el vecino la recorre hacia abajo, ¡así que todas las paredes internas se cancelan por completo! Lo único que sobrevive sin cancelarse es la frontera exterior $\partial D^+$ (y los bordes de los agujeros recorridos en sentido opuesto). Por eso la suma de todos los giros internos ($\iint_D (Q_x-P_y)\,dA$) equivale al giro neto en la frontera ($\oint_{\partial D^+} \vec{F}\cdot d\vec{r}$)!
+            </p>
+          </div>
+
+          <!-- BLOQUE 4: GLOSARIO SUBTEMA 5 -->
+          <div class="subtopic-glossary-widget" id="subtopic-glossary-t5" data-topic="t5">
+            <div class="subtopic-glossary-header">
+              <div class="subtopic-glossary-info">
+                <h4>📖 Glosario Interactivo de Notación (Sesiones 35–36)</h4>
+                <p class="subtopic-glossary-subtext">11 símbolos esenciales: Teorema de Green simple y con agujeros, orientación positiva, deformación de contornos, áreas, centroides, divergencia 2D y Laplaciano.</p>
+              </div>
+              <div class="subtopic-glossary-controls">
+                <div class="subtopic-search-wrap">
+                  <span class="subtopic-search-icon" aria-hidden="true">🔍</span>
+                  <input type="text" class="subtopic-search-input" data-topic="t5" placeholder="Filtrar símbolos del Subtema 5..." autocomplete="off" aria-label="Filtrar símbolos del Subtema 5">
+                  <button type="button" class="subtopic-search-clear" data-topic="t5" title="Limpiar" aria-label="Limpiar filtro">✕</button>
+                </div>
+                <button type="button" class="btn-toggle-subtopic-view" data-topic="t5" title="Alternar vista compacta y detallada">
+                  <span class="view-mode-icon" aria-hidden="true">📑</span> <span class="view-mode-label">Vista Compacta</span>
+                </button>
+              </div>
+            </div>
+            <div class="subtopic-glossary-counter" id="subtopic-counter-t5">
+              Mostrando <span class="subtopic-count-val">11</span> de 11 símbolos del Subtema 5
+            </div>
+            <div class="subtopic-glossary-cards" id="subtopic-glossary-cards-t5"></div>
+          </div>
+
+          <!-- BLOQUE 5: DEMOSTRACIÓN EN 2 FASES -->
+          <div class="proof-anatomy-widget">
+            <div class="proof-anatomy-header">
+              <span class="proof-anatomy-title">🧬 Anatomía de Demostración: Teorema de Green en una Región Elemental (Tipo I y II)</span>
+              <div class="proof-phase-tabs" role="tablist">
+                <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Cómo pensarla (Borrador)</button>
+                <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Redacción Formal (20/20)</button>
+              </div>
+            </div>
+            <div class="proof-phase-pane active" data-phase="draft">
+              <div class="draft-step-grid">
+                <div class="draft-step-card">
+                  <h5>🎯 1. Divide y Vencerás</h5>
+                  <p>Prueba por separado dos igualdades: (1) $\oint_{\partial D^+} P\,dx = -\iint_D P_y\,dA$ usando Tipo I, y (2) $\oint_{\partial D^+} Q\,dy = +\iint_D Q_x\,dA$ usando Tipo II.</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🧰 2. Fubini + TFC en Tipo I</h5>
+                  <p>Al integrar $P_y$ respecto a $y$ entre $g_1(x)$ y $g_2(x)$, sale $P(x, g_2(x)) - P(x, g_1(x))$. Los bordes verticales $x=a, b$ tienen $dx = 0$!</p>
+                </div>
+                <div class="draft-step-card">
+                  <h5>🌉 3. El Signo Menos del Techo</h5>
+                  <p>En orientación antihoraria, el techo $y=g_2(x)$ se recorre de $b$ a $a$ (derecha a izquierda): voltear $\int_b^a = -\int_a^b$ genera exactamente el signo menos de $-P_y$!</p>
+                </div>
+              </div>
+            </div>
+            <div class="proof-phase-pane" data-phase="formal">
+              <div class="formal-proof-script">
+                <p><strong>Demostración Formal:</strong></p>
+                <p>Supongamos que $D$ es simultáneamente de Tipo I: $D = \{(x,y) : a \le x \le b,\; g_1(x) \le y \le g_2(x)\}$ y de Tipo II: $D = \{(x,y) : c \le y \le d,\; h_1(y) \le x \le h_2(y)\}$.</p>
+                <p>1. <strong>Parte de $P$:</strong> Aplicando Fubini y el TFC a $-\iint_D P_y\,dA$:
+                $$-\iint_D \frac{\partial P}{\partial y}\,dA = -\int_a^b \left(\int_{g_1(x)}^{g_2(x)} \frac{\partial P}{\partial y}(x,y)\,dy\right)dx = \int_a^b P(x, g_1(x))\,dx - \int_a^b P(x, g_2(x))\,dx.$$
+                Por otro lado, la frontera $\partial D^+$ consta del borde inferior $C_1$ ($x: a\to b$), borde derecho vertical $C_2$ ($dx=0$), borde superior $C_3$ ($x: b\to a$) y borde izquierdo vertical $C_4$ ($dx=0$):
+                $$\oint_{\partial D^+} P\,dx = \int_a^b P(x, g_1(x))\,dx + 0 + \int_b^a P(x, g_2(x))\,dx + 0 = -\iint_D \frac{\partial P}{\partial y}\,dA.$$</p>
+                <p>2. <strong>Parte de $Q$:</strong> De forma análoga usando la descripción Tipo II (donde los bordes horizontales aportan $dy = 0$, el derecho va de $c\to d$ y el izquierdo de $d\to c$):
+                $$\oint_{\partial D^+} Q\,dy = \int_c^d Q(h_2(y), y)\,dy + \int_d^c Q(h_1(y), y)\,dy = \int_c^d \left(\int_{h_1(y)}^{h_2(y)} \frac{\partial Q}{\partial x}\,dx\right)dy = \iint_D \frac{\partial Q}{\partial x}\,dA.$$</p>
+                <p style="margin-bottom:0;">3. Sumando ambas identidades resulta $\oint_{\partial D^+} (P\,dx + Q\,dy) = \iint_D (Q_x - P_y)\,dA$. $\qquad \blacksquare$</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- BLOQUE 6: BANCO DE EJERCICIOS SUBTEMA 5 -->
+      <div class="exercises-header" id="ejercicios-t5">
+        <div>
+          <h2>Banco de Ejercicios: Teorema de Green</h2>
+          <div class="exercises-meta-row">
+            <span class="subtopic-glossary-subtext">18 ejercicios rigurosos organizados progresivamente del Nivel 0 al 5.</span>
+            <span class="exercise-progress-pill" id="progress-t5">✓ 0 / 18 dominados</span>
+          </div>
+        </div>
+        <div class="level-tabs" data-topic="t5" role="tablist">
+          <button type="button" class="level-tab-btn active" data-level="0" role="tab" aria-selected="true">Nivel 0 (Calentamiento)</button>
+          <button type="button" class="level-tab-btn" data-level="1" role="tab" aria-selected="false">Nivel 1 (Básico)</button>
+          <button type="button" class="level-tab-btn" data-level="2" role="tab" aria-selected="false">Nivel 2 (Intermedio)</button>
+          <button type="button" class="level-tab-btn" data-level="3" role="tab" aria-selected="false">Nivel 3 (Examen UNI)</button>
+          <button type="button" class="level-tab-btn" data-level="4" role="tab" aria-selected="false">Nivel 4 (Avanzado)</button>
+          <button type="button" class="level-tab-btn" data-level="5" role="tab" aria-selected="false">Nivel 5 (Rigor Máximo)</button>
+          <button type="button" class="level-tab-btn" data-level="all" role="tab" aria-selected="false">Ver Todos</button>
+        </div>
+      </div>
+      <div class="exercises-list" id="exercises-container-t5"></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- PESTAÑA DESTACADA: RETOS 2026-2 (EXÁMENES PC6 + SIMULADOR GREEN)       -->
+    <!-- ===================================================================== -->
+    <section class="topic-section" id="section-tr" role="tabpanel" hidden>
+      <div id="retos-2026"></div>
+
+      <article class="theory-card">
+        <h2><span>🎯</span> Retos 2026-2: Exámenes Reales PC6, Contraejemplos V/F &amp; Simulador Green</h2>
+        <p>
+          Entrenamiento de alto impacto basado en las evaluaciones reales de la Escuela Profesional de Matemática de la UNI: <strong>PC6 2026-I</strong>, <strong>PC6 2025-II</strong>, <strong>PC6 2025-I</strong> y <strong>PC6 2024-II</strong>, junto al laboratorio interactivo 2D del Vórtice y Teorema de Green.
+        </p>
+
+        <!-- Sub-navegación de Retos (4 hermanas directas) -->
+        <div class="retos-subtabs-nav" role="tablist">
+          <button type="button" class="retos-subtab-btn active" data-subtab="traductor" role="tab" aria-selected="true">
+            1️⃣ Matriz de Contraejemplos V/F
+          </button>
+          <button type="button" class="retos-subtab-btn" data-subtab="green-sim" role="tab" aria-selected="false">
+            2️⃣ Simulador 2D: Vórtice &amp; Green
+          </button>
+          <button type="button" class="retos-subtab-btn" data-subtab="examenes" role="tab" aria-selected="false">
+            3️⃣ Solucionario PC6 (2026-I, 2025-II, 2024-II)
+          </button>
+          <button type="button" class="retos-subtab-btn" data-subtab="hibridos" role="tab" aria-selected="false">
+            4️⃣ Laboratorio de Problemas Combinados
+          </button>
+        </div>
+
+        <!-- SUB-PESTAÑA 1: MATRIZ DE CONTRAEJEMPLOS V/F -->
+        <div class="retos-subtab-pane active" id="retos-pane-traductor">
+          <div class="theory-block caution">
+            <h4>1️⃣ Matriz de Trampas Clásicas V/F de Exámenes PC6 (UNI)</h4>
+            <p style="margin:0;">
+              Todas estas proposiciones aparecieron casi textualmente en prácticas calificadas recientes de CM2A1. Domina el fallo lógico y el contraejemplo canónico de cada una:
+            </p>
+          </div>
+
+          <div class="table-responsive">
+            <table class="translator-table">
+              <thead>
+                <tr>
+                  <th>Afirmación Engañosa en Examen</th>
+                  <th>V / F</th>
+                  <th>¿Por qué falla? (Fallo Lógico)</th>
+                  <th>Contraejemplo Canónico para Citar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>«Si $P_y = Q_x$ en su dominio abierto $U$, entonces $\vec{F}=(P,Q)$ es conservativo»</strong> (PC6 2025-I #1b)</td>
+                  <td><span class="level-badge badge-l5">FALSA</span></td>
+                  <td>Falta la hipótesis topológica de que $U$ sea simplemente conexo (o convexo/estrellado).</td>
+                  <td>$\vec{V}(x,y) = \left(\frac{-y}{x^2+y^2}, \frac{x}{x^2+y^2}\right)$ en $\mathbb{R}^2 \setminus \{(0,0)\}$: $P_y = Q_x$, pero $\oint_{S^1} \vec{V}\cdot d\vec{r} = 2\pi \neq 0$.</td>
+                </tr>
+                <tr>
+                  <td><strong>«Si $\oint_{C_r} \vec{F}\cdot d\alpha = 0$ para toda circunferencia $C_r: x^2+y^2=r^2$ ($r \gt 0$), entonces $\vec{F}$ es conservativo»</strong> (PC6 2024-II #1b)</td>
+                  <td><span class="level-badge badge-l5">FALSA</span></td>
+                  <td>La caracterización exige circulación nula sobre TODA curva cerrada, no solo en círculos centrados en el origen.</td>
+                  <td>$\vec{F}(x,y) = (xy, x^2)$: $\oint_{C_r} \vec{F}\cdot d\alpha = 0\; \forall r \gt 0$, pero $Q_x - P_y = x \neq 0$.</td>
+                </tr>
+                <tr>
+                  <td><strong>«Si $\vec{F} \in C^1(U)$ en un abierto $U$ que contiene a la curva cerrada simple $C$, entonces $\oint_C P\,dx+Q\,dy = \iint_D (Q_x-P_y)\,dA$»</strong> (PC6 2024-II #1c)</td>
+                  <td><span class="level-badge badge-l5">FALSA</span></td>
+                  <td>Green requiere que $U$ contenga a TODA la región cerrada $D \cup C$, no únicamente a la frontera $C$.</td>
+                  <td>Vórtice $\vec{V}$ en el anillo abierto $U = \{\frac{1}{2} \lt r \lt 2\} \supset S^1$: $\oint_{S^1} = 2\pi$ pero $Q_x - P_y = 0$ fuera de $(0,0)$.</td>
+                </tr>
+                <tr>
+                  <td><strong>«Si el dominio $U$ tiene un agujero, ningún campo definido en $U$ puede ser conservativo»</strong> (Trampa inversa PC6 2025-II #4)</td>
+                  <td><span class="level-badge badge-l5">FALSA</span></td>
+                  <td>La simple conexidad es condición SUFICIENTE (con $Q_x=P_y$), no condición necesaria para ser gradiente.</td>
+                  <td>$\vec{F}(x,y) = \left(\frac{2x}{x^2+y^2}, \frac{2y}{x^2+y^2}\right)$ en $\mathbb{R}^2 \setminus \{(0,0)\}$ SÍ es conservativo: $\varphi(x,y) = \ln(x^2+y^2)$.</td>
+                </tr>
+                <tr>
+                  <td><strong>«Si $\int_C f\,ds = 5$ al ir de $A$ a $B$, entonces al ir de $B$ a $A$ la integral escalar vale $-5$»</strong></td>
+                  <td><span class="level-badge badge-l5">FALSA</span></td>
+                  <td>Confunde integral de campo escalar ($\int_{-C} f\,ds = +\int_C f\,ds$) con integral vectorial ($\int_{-C} \vec{F}\cdot d\vec{r} = -\int_C$).</td>
+                  <td>$f(x,y) = 1$ sobre el segmento de longitud $5$: su longitud es $+5$ en ambos sentidos.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SUB-PESTAÑA 2: SIMULADOR 2D DE CIRCULACIÓN, VÓRTICE Y GREEN -->
+        <div class="retos-subtab-pane" id="retos-pane-green-sim">
+          <div class="theory-block intuition">
+            <h4>2️⃣ Simulador Interactivo 2D: Circulación $\oint_C \vec{F}\cdot d\vec{r}$, Agujero en $(0,0)$ y Teorema de Green</h4>
+            <p style="margin:0;">
+              Elige el campo vectorial y desplaza el contorno cerrado $C$ (centro $x_0$ y radio $R$). En modo <strong>Vórtice Irrotacional</strong>, cruza el borde sobre el agujero rojo $(0,0)$ para ver cómo la circulación salta abruptamente de $0$ a $2\pi \approx 6.283$!
+            </p>
+          </div>
+
+          <div class="visualizer-card">
+            <div class="visualizer-header">
+              <div class="control-btn-group">
+                <button type="button" class="btn-ctrl sim-green-mode-btn" data-mode="conservative">Conservativo $(x,-y)$</button>
+                <button type="button" class="btn-ctrl sim-green-mode-btn" data-mode="rotational">Rotacional $(-y,x)$</button>
+                <button type="button" class="btn-ctrl sim-green-mode-btn active" data-mode="vortex">Vórtice $\frac{(-y,x)}{x^2+y^2}$</button>
+              </div>
+              <span class="touch-hint-badge">Canvas 2D Responsivo</span>
+            </div>
+
+            <div class="canvas-shell">
+              <canvas id="green-2d-canvas" class="reactive-2d-canvas" width="600" height="340"></canvas>
+            </div>
+
+            <div class="visualizer-controls">
+              <div class="control-group">
+                <label class="control-label" for="sim-green-cx-slider">Centro del Lazo ($x_0$):</label>
+                <input type="range" class="control-slider" id="sim-green-cx-slider" min="-1.8" max="2.4" step="0.05" value="0.0">
+                <span class="readout-value" id="sim-green-cx-readout">0.00</span>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="sim-green-r-slider">Radio del Lazo ($R$):</label>
+                <input type="range" class="control-slider" id="sim-green-r-slider" min="0.4" max="1.8" step="0.05" value="1.15">
+                <span class="readout-value" id="sim-green-r-readout">1.15</span>
+              </div>
+              <div class="visualizer-readout">
+                <span>Circulación $\oint_C \vec{F}\cdot d\vec{r}$ y Área:</span>
+                <span class="readout-value" id="sim-green-circ-readout">6.283 | Área(D) = 4.155</span>
+              </div>
+              <div id="sim-green-status" class="sim-status-badge pending">
+                ⚠️ ¡TRAMPA UNI! Q_x - P_y = 0 fuera de (0,0), pero C encierra el agujero ⇒ ∮ V·dr = 2π ≈ 6.283 ≠ 0.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-PESTAÑA 3: SOLUCIONARIO OFICIAL PC6 2026-I, 2025-II Y 2024-II -->
+        <div class="retos-subtab-pane" id="retos-pane-examenes">
+          <div class="theory-block theorem">
+            <h4>3️⃣ Solucionario Comentado de Exámenes Oficiales PC6 (2026-I, 2025-II y 2024-II)</h4>
+            <p style="margin:0;">
+              Problemas clave de las tres evaluaciones más recientes resueltos en 2 fases (protocolo de análisis vs. redacción de puntaje completo).
+            </p>
+          </div>
+
+          <!-- Examen 1: PC6 2026-I Pregunta 2 -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4>PC6 2026-I — Pregunta 2: Circulación sobre Elipse Intersección Paraboloide-Plano</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag amber">PC6 2026-I</span>
+                <span class="hybrid-tag">Parametrización 3D</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              <strong>Enunciado (5 pts):</strong> Considere $\vec{F}(x,y,z) = (8x+z)\hat{i} + 2xz^2\hat{j} - 4y^2\hat{k}$. Calcule $\oint_C \vec{F}\cdot d\vec{r}$ sobre la curva $z = 9 - 2x^2 - 4y^2$, $z = 1$, con orientación positiva vista desde lo alto del eje $+Z$.
+            </div>
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Anatomía de Solución (PC6 2026-I #2)</span>
+                <div class="proof-phase-tabs" role="tablist">
+                  <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Estrategia</button>
+                  <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Redacción 20/20</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. Identificar la Curva</h5>
+                    <p>Reemplaza $z=1$ en el paraboloide: $2x^2 + 4y^2 = 8 \implies \frac{x^2}{4} + \frac{y^2}{2} = 1$, elipse plana en $z = 1$ de semiejes $a=2, b=\sqrt{2}$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. ¡Atajo con Green!</h5>
+                    <p>Como $z = 1$ es constante ($dz = 0$), la integral 3D se reduce al plano $XY$ con $P = 8x+1$ y $Q = 2x$, ¡cuyo rotacional es $Q_x - P_y = 2$ constante!</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. Verificación Rápida</h5>
+                    <p>Por Green: $2\cdot\operatorname{Area}(\text{elipse}) = 2(\pi \cdot 2 \cdot \sqrt{2}) = 4\sqrt{2}\,\pi$. Coincide al 100% con la parametrización directa!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p>1. Intersecando $z = 9 - 2x^2 - 4y^2$ con $z = 1$ resulta $2x^2 + 4y^2 = 8 \iff \frac{x^2}{4} + \frac{y^2}{2} = 1$ en el plano $z = 1$.</p>
+                  <p>2. Parametrizamos positivamente (antihorario desde $+Z$): $\vec{r}(t) = (2\cos t,\; \sqrt{2}\sin t,\; 1)$, $t \in [0, 2\pi]$, $\vec{r}'(t) = (-2\sin t,\; \sqrt{2}\cos t,\; 0)$.</p>
+                  <p style="margin-bottom:0;">3. Evaluando $\vec{F}(\vec{r}(t))\cdot \vec{r}'(t) = (16\cos t + 1)(-2\sin t) + (4\cos t)(\sqrt{2}\cos t) + 0 = -32\cos t\sin t - 2\sin t + 4\sqrt{2}\cos^2 t$:
+                  $$\oint_C \vec{F}\cdot d\vec{r} = \int_0^{2\pi} \left(-16\sin(2t) - 2\sin t + 4\sqrt{2}\cos^2 t\right)dt = 0 - 0 + 4\sqrt{2}(\pi) = 4\sqrt{2}\,\pi. \qquad \blacksquare$$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Examen 2: PC6 2025-II Pregunta 4 -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4>PC6 2025-II — Pregunta 4: Campo Conservativo en el Plano Perforado $D = \mathbb{R}^2 \setminus \{(0,0)\}$</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag amber">PC6 2025-II</span>
+                <span class="hybrid-tag rose">Trampa Topológica</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              <strong>Enunciado (5 pts):</strong> Demuestre que $\vec{F}(x,y) = \left(\frac{2x}{x^2+y^2} + 3x^2y,\; \frac{2y}{x^2+y^2} + x^3 - 2y\right)$ es conservativo en $D = \mathbb{R}^2 \setminus \{(0,0)\}$ y halle una función potencial $f(x,y)$ tal que $\nabla f = \vec{F}$.
+            </div>
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Anatomía de Solución (PC6 2025-II #4)</span>
+                <div class="proof-phase-tabs" role="tablist">
+                  <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Estrategia</button>
+                  <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Redacción 20/20</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. No Caigas en la Trampa</h5>
+                    <p>Como $D$ no es simplemente conexo, NO puedes invocar el Lema de Poincaré; pero exhibir directamente $f \in C^1(D)$ con $\nabla f = \vec{F}$ prueba que SÍ es conservativo por definición!</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. Reconoce $\nabla\ln(x^2+y^2)$</h5>
+                    <p>Observa que $\frac{\partial}{\partial x}\ln(x^2+y^2) = \frac{2x}{x^2+y^2}$ y $\frac{\partial}{\partial y}\ln(x^2+y^2) = \frac{2y}{x^2+y^2}$, válido y suave en TODO $\mathbb{R}^2\setminus\{(0,0)\}$!</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. Parte Polinomial</h5>
+                    <p>Para $(3x^2y, x^3 - 2y)$ el potencial inmediato es $x^3y - y^2$. Sumando ambos resulta $f(x,y) = \ln(x^2+y^2) + x^3y - y^2$.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p>1. Buscamos $f: D \to \mathbb{R}$ tal que $f_x = \frac{2x}{x^2+y^2} + 3x^2y$ y $f_y = \frac{2y}{x^2+y^2} + x^3 - 2y$.</p>
+                  <p>2. Integrando $f_x$ respecto a $x$ en $D = \mathbb{R}^2 \setminus \{(0,0)\}$ (donde $x^2+y^2 \gt 0$):
+                  $$f(x,y) = \ln(x^2+y^2) + x^3y + g(y).$$</p>
+                  <p style="margin-bottom:0;">3. Derivando respecto a $y$: $f_y = \frac{2y}{x^2+y^2} + x^3 + g'(y) = \frac{2y}{x^2+y^2} + x^3 - 2y \implies g'(y) = -2y \implies g(y) = -y^2 + C$.
+                  Como $f(x,y) = \ln(x^2+y^2) + x^3y - y^2$ es $C^\infty$ en todo $D$ y verifica $\nabla f(x,y) = \vec{F}(x,y)$ en todo $(x,y) \in D$, concluimos por definición que $\vec{F}$ es conservativo en $D$. $\qquad \blacksquare$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Examen 3: PC6 2024-II Pregunta 4b -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4>PC6 2024-II — Pregunta 4b: Trabajo sobre el Cardioide con Campo Trascendente</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag amber">PC6 2024-II</span>
+                <span class="hybrid-tag">Green + Simetría Polar</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              <strong>Enunciado (3 pts):</strong> Dado $\vec{F}(x,y) = (e^{\sin x} - y^2,\; \arctan y)$, una partícula se desplaza a lo largo del cardioide $C: r = 1 + \cos\theta$, $\theta \in [0, 2\pi]$. Encuentre el trabajo realizado por $\vec{F}$.
+            </div>
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Anatomía de Solución (PC6 2024-II #4b)</span>
+                <div class="proof-phase-tabs" role="tablist">
+                  <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Estrategia</button>
+                  <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Redacción 20/20</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. Evitar Parametrizar</h5>
+                    <p>$e^{\sin x}$ y $\arctan y$ son trampas visuales: dependen cada una de su propia variable, así que al aplicar Green desaparecen al instante!</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. Rotacional 2D</h5>
+                    <p>$Q_x - P_y = 0 - (-2y) = 2y$, función impar en $y$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. Simetría del Cardioide</h5>
+                    <p>El cardioide $r = 1+\cos\theta$ es simétrico respecto al eje $X$ ($y \mapsto -y$), por lo que $\iint_D 2y\,dA = 0$ exactamente.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p>1. Como $P(x,y) = e^{\sin x} - y^2$ y $Q(x,y) = \arctan y$ pertenecen a $C^\infty(\mathbb{R}^2)$ y el cardioide $C$ es una curva cerrada simple orientada positivamente que encierra la región $D$, aplicamos el Teorema de Green:</p>
+                  <p style="margin-bottom:0;">$$W = \oint_C \vec{F}\cdot d\vec{r} = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dA = \iint_D 2y\,dA = \int_0^{2\pi} \int_0^{1+\cos\theta} 2(r\sin\theta)\,r\,dr\,d\theta = \frac{2}{3}\int_0^{2\pi} (1+\cos\theta)^3\sin\theta\,d\theta = \left[-\frac{(1+\cos\theta)^4}{6}\right]_0^{2\pi} = 0. \quad \blacksquare$$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-PESTAÑA 4: LABORATORIO DE PROBLEMAS COMBINADOS -->
+        <div class="retos-subtab-pane" id="retos-pane-hibridos">
+          <div class="theory-block emerald">
+            <h4>4️⃣ Laboratorio de Preguntas Combinadas Tipo PC6 Avanzada</h4>
+            <p style="margin:0;">
+              Problemas integradores que combinan singularidades múltiples, deformación de contornos, cambio de variables y cálculo de áreas mediante Green.
+            </p>
+          </div>
+
+          <!-- Híbrido 1 -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4>Caso Híbrido 1: Campo Mixto con Dos Singularidades + Rotacional No Nulo</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag amber">Green Múltiplemente Conexo</span>
+                <span class="hybrid-tag rose">Deformación de Contornos</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              Calcule $\oint_C \vec{F}\cdot d\vec{r}$ sobre la curva $C: \frac{x^2}{25} + \frac{y^2}{16} = 1$ orientada positivamente, para el campo:
+              $$\vec{F}(x,y) = \left( e^{x^3} - 3y + \frac{-(y-1)}{(x-2)^2+(y-1)^2} + \frac{4x}{x^2+y^2},\; 2x + \cos(y^2) + \frac{x-2}{(x-2)^2+(y-1)^2} + \frac{4y}{x^2+y^2}\right).$$
+            </div>
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Anatomía en 2 Fases: Descomposición en 4 Campos Elementales</span>
+                <div class="proof-phase-tabs" role="tablist">
+                  <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Mapa de Descomposición</button>
+                  <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Solución Formal 20/20</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. Dos Partes Conservativas</h5>
+                    <p>$(e^{x^3}, \cos(y^2))$ es conservativo en $\mathbb{R}^2$ (da $0$). Y $\left(\frac{4x}{x^2+y^2}, \frac{4y}{x^2+y^2}\right) = \nabla(2\ln(x^2+y^2))$ es conservativo en $\mathbb{R}^2\setminus\{(0,0)\}$ (también da $0$ aunque $(0,0)$ esté adentro!).</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. Parte Rotacional Constante</h5>
+                    <p>$(-3y, 2x)$ tiene $Q_x - P_y = 2 - (-3) = 5$. Por Green sobre la elipse ($a=5, b=4$, área $20\pi$), aporta $5(20\pi) = 100\pi$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. El Vórtice en $(2,1)$</h5>
+                    <p>Comprobamos $\frac{2^2}{25} + \frac{1^2}{16} = 0.2225 \lt 1 \implies (2,1)$ está DENTRO de la elipse! Por deformación de contornos, aporta $+2\pi$. Total: $102\pi$.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p>Descomponemos $\vec{F} = \vec{F}_1 + \vec{F}_2 + \vec{F}_3 + \vec{F}_4$ por linealidad:</p>
+                  <p>1. $\vec{F}_1 = (e^{x^3}, \cos(y^2))$ es conservativo en $\mathbb{R}^2 \implies \oint_C \vec{F}_1\cdot d\vec{r} = 0$.</p>
+                  <p>2. $\vec{F}_2 = \left(\frac{4x}{x^2+y^2}, \frac{4y}{x^2+y^2}\right) = \nabla\big(2\ln(x^2+y^2)\big)$ es conservativo en $\mathbb{R}^2\setminus\{(0,0)\} \supset C \implies \oint_C \vec{F}_2\cdot d\vec{r} = 0$.</p>
+                  <p>3. $\vec{F}_3 = (-3y, 2x) \in C^\infty(\mathbb{R}^2)$: por Green sobre el interior elíptico $D$ de área $\pi(5)(4) = 20\pi$:
+                  $$\oint_C \vec{F}_3\cdot d\vec{r} = \iint_D (2 - (-3))\,dA = 5(20\pi) = 100\pi.$$</p>
+                  <p style="margin-bottom:0;">4. $\vec{F}_4 = \left(\frac{-(y-1)}{(x-2)^2+(y-1)^2}, \frac{x-2}{(x-2)^2+(y-1)^2}\right)$ es irrotacional fuera de $(2,1)$. Como $\frac{4}{25}+\frac{1}{16} \lt 1$, $(2,1) \in \operatorname{int}(D)$; por Green múltiplemente conexo deformando a $C_\varepsilon((2,1))$ resulta $\oint_C \vec{F}_4\cdot d\vec{r} = 2\pi$.
+                  Sumando: $\oint_C \vec{F}\cdot d\vec{r} = 0 + 0 + 100\pi + 2\pi = 102\pi$. $\qquad \blacksquare$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Híbrido 2 -->
+          <div class="hybrid-case-card">
+            <div class="hybrid-case-header">
+              <h4>Caso Híbrido 2: Curva Abierta + Cierre con Green + Centroide</h4>
+              <div class="hybrid-tags">
+                <span class="hybrid-tag">Green + Cierre</span>
+                <span class="hybrid-tag amber">Centroide Polar</span>
+              </div>
+            </div>
+            <div class="exercise-statement">
+              Calcule $\int_C \left( (x^4 - y^2)\,dx + (x^2 + \sin y)\,dy \right)$ donde $C$ es el arco semicircular superior $x^2 + y^2 = R^2$, $y \ge 0$, recorrido desde $(R, 0)$ hasta $(-R, 0)$.
+            </div>
+            <div class="proof-anatomy-widget" style="margin-bottom:0;">
+              <div class="proof-anatomy-header">
+                <span class="proof-anatomy-title">🧬 Anatomía en 2 Fases: Cierre por el Diámetro $y = 0$</span>
+                <div class="proof-phase-tabs" role="tablist">
+                  <button type="button" class="proof-phase-toggle-btn active" data-phase="draft" role="tab" aria-selected="true">🧠 Fase 1: Estrategia</button>
+                  <button type="button" class="proof-phase-toggle-btn" data-phase="formal" role="tab" aria-selected="false">✍️ Fase 2: Solución Formal 20/20</button>
+                </div>
+              </div>
+              <div class="proof-phase-pane active" data-phase="draft">
+                <div class="draft-step-grid">
+                  <div class="draft-step-card">
+                    <h5>🎯 1. Cerrar la Curva</h5>
+                    <p>Añade el segmento $L$ sobre $y = 0$ desde $(-R,0)$ hasta $(R,0)$: así $C \cup L = \partial D^+$ encierra el semidisco superior en sentido antihorario!</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🧰 2. Integral sobre $L$</h5>
+                    <p>En $L$ ($y=0, dy=0$), $P = x^4$ (función par!), luego $\int_L = \int_{-R}^R x^4\,dx = \frac{2R^5}{5}$.</p>
+                  </div>
+                  <div class="draft-step-card">
+                    <h5>🌉 3. Integral Doble por Green</h5>
+                    <p>$Q_x - P_y = 2x + 2y$. Por simetría impar en $x$, $\iint_D 2x\,dA = 0$; y usando el centroide del semidisco ($\bar{y} = \frac{4R}{3\pi}$, área $\frac{\pi R^2}{2}$), $\iint_D 2y\,dA = 2\bar{y}A = \frac{4R^3}{3}$!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="proof-phase-pane" data-phase="formal">
+                <div class="formal-proof-script">
+                  <p>1. Sea $L$ el segmento $(-R,0) \to (R,0)$ sobre el eje $X$. La curva cerrada simple $C \cup L$ recorre positivamente la frontera del semidisco $D = \{x^2+y^2 \le R^2, y \ge 0\}$.</p>
+                  <p>2. Aplicando Green ($P_y = -2y$, $Q_x = 2x$):
+                  $$\int_C \vec{F}\cdot d\vec{r} + \int_L \vec{F}\cdot d\vec{r} = \iint_D (2x + 2y)\,dA = 0 + \int_0^\pi \int_0^R 2(r\sin\theta)\,r\,dr\,d\theta = 2\left(\frac{R^3}{3}\right)(2) = \frac{4R^3}{3}.$$</p>
+                  <p style="margin-bottom:0;">3. Sobre $L$ ($y = 0, dy = 0$, $x \in [-R, R]$): $\int_L = \int_{-R}^R x^4\,dx = \frac{2R^5}{5}$.
+                  Despejando: $\int_C \vec{F}\cdot d\vec{r} = \frac{4R^3}{3} - \frac{2R^5}{5}$. $\qquad \blacksquare$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- PESTAÑA MAESTRA: GLOSARIO UNIVERSAL DE SÍMBOLOS PC6 (55 SÍMBOLOS)      -->
+    <!-- ===================================================================== -->
+    <section class="topic-section" id="section-glosario" role="tabpanel" hidden>
+      <div class="glossary-master-container">
+        <div class="glossary-master-hero">
+          <div class="glossary-hero-badge">
+            <span>📖</span>
+            <span>DICCIONARIO MATEMÁTICO INTEGRAL CM2A1 • PC6</span>
+          </div>
+          <h2 class="glossary-master-title">Glosario de Notación, Símbolos y Jerga Formal PC6</h2>
+          <p class="glossary-master-desc">
+            Compendio de <strong>55 símbolos rigurosos</strong> de las sesiones 31 a 36 (Integrales de Línea Escalares y Vectoriales, Conjuntos Convexos, Campos Gradientes, El Vórtice y Teorema de Green). Cada ficha detalla pronunciación, intuición, qué escribir en tu cuadernillo y trampas clásicas UNI.
+          </p>
+        </div>
+
+        <div class="glossary-toolbar-card">
+          <div class="glossary-search-box">
+            <span class="glossary-search-icon" aria-hidden="true">🔍</span>
+            <input type="text" id="glossary-search-input" class="glossary-search-input" placeholder="Buscar por símbolo, teorema o concepto (ej. Green, vórtice, convexo, Poincaré, flujo, centroide)..." autocomplete="off" spellcheck="false" aria-label="Buscar símbolos en el glosario PC6">
+            <button type="button" id="glossary-search-clear" class="glossary-search-clear" title="Limpiar búsqueda" aria-label="Limpiar búsqueda">✕</button>
+          </div>
+
+          <div class="glossary-filters-row">
+            <div class="glossary-filter-pills" id="glossary-topic-filters">
+              <button type="button" class="glossary-pill-btn active" data-filter="all">
+                <span>📚</span> Todos <span class="pill-count" id="count-all">55</span>
+              </button>
+              <button type="button" class="glossary-pill-btn" data-filter="t1">
+                <span>〰️</span> Escalar <span class="pill-count" id="count-t1">11</span>
+              </button>
+              <button type="button" class="glossary-pill-btn" data-filter="t2">
+                <span>➡️</span> Vectorial <span class="pill-count" id="count-t2">11</span>
+              </button>
+              <button type="button" class="glossary-pill-btn" data-filter="t3">
+                <span>🧭</span> Gradientes <span class="pill-count" id="count-t3">11</span>
+              </button>
+              <button type="button" class="glossary-pill-btn" data-filter="t4">
+                <span>🌀</span> Potenciales <span class="pill-count" id="count-t4">11</span>
+              </button>
+              <button type="button" class="glossary-pill-btn" data-filter="t5">
+                <span>🔄</span> Green <span class="pill-count" id="count-t5">11</span>
+              </button>
+            </div>
+
+            <div class="glossary-stats-indicator">
+              <span>Mostrando:</span>
+              <strong id="glossary-visible-count">55</strong> de <span id="glossary-total-count">55</span> símbolos
+            </div>
+          </div>
+        </div>
+
+        <div class="glossary-cards-grid" id="glossary-cards-container"></div>
+
+        <div class="glossary-empty-state" id="glossary-empty-state" style="display: none;">
+          <div class="empty-icon">🔍</div>
+          <h3>No se encontraron símbolos que coincidan con la búsqueda</h3>
+          <p>Prueba con términos como <em>Green</em>, <em>vórtice</em>, <em>convexo</em>, <em>flujo</em>, <em>Poincaré</em> o <em>centroide</em>.</p>
+          <button type="button" class="btn-action" id="btn-reset-glossary-search">Restablecer filtros</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Botón flotante Volver Arriba -->
+  <button type="button" id="back-to-top-btn" class="back-to-top-btn" aria-label="Volver al inicio" title="Volver arriba">↑</button>
+
+  <!-- Footer Institucional -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p><strong>Cálculo Diferencial e Integral Avanzado (CM2A1)</strong> • Escuela Profesional de Matemática</p>
+      <p>Facultad de Ciencias • Universidad Nacional de Ingeniería (UNI) • Lima, Perú</p>
+      <p style="margin-top:0.45rem; font-size:0.84rem;">Diseñado para visualización óptima en celulares Android, tablets y pantallas de escritorio.</p>
+      <p style="margin-top:0.85rem; margin-bottom:0;">
+        <a href="pdf/Compendio_PC6_Calculo_Avanzado.pdf?v=1" target="_blank" rel="noopener noreferrer" class="btn-pdf-download">
+          <span class="pdf-icon" aria-hidden="true">📄</span> Versión PDF Imprimible (88 págs)
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts Locales del Proyecto (diferidos para FCP instantáneo en Android) -->
+  <script defer src="js/data-exercises.js?v=1"></script>
+  <script defer src="js/data-glossary.js?v=1"></script>
+  <script defer src="js/visualizers.js?v=1"></script>
+  <script defer src="js/retos-2026.js?v=1"></script>
+  <script defer src="js/app.js?v=1"></script>
+
+</body>
+</html>
