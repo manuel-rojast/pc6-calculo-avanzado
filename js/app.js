@@ -66,9 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function formatMathText(str) {
     if (!str) return '';
-    return str
+    const mathBlocks = [];
+    const stash = (m) => {
+      const idx = mathBlocks.length;
+      mathBlocks.push(m);
+      return `@@MATH_${idx}@@`;
+    };
+    let html = str
+      .replace(/\$\$[\s\S]+?\$\$/g, stash)
+      .replace(/\$[^$\n]+?\$/g, stash);
+    html = html
+      .replace(/\*\*((?:(?!\*\*).)+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
       .replace(/\n\n/g, '<br><br>')
       .replace(/\n/g, '<br>');
+    return html.replace(/@@MATH_(\d+)@@/g, (_, idx) => mathBlocks[Number(idx)]);
   }
 
   const KATEX_OPTIONS = {
